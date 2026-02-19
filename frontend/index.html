@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill Tracker - Track Your Learning Progress</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo">📚 Skill Tracker</h1>
+            <p class="tagline">Master your skills, one step at a time</p>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- Add Skill Form -->
+        <section class="add-skill-section">
+            <h2>Add New Skill</h2>
+            <form id="skillForm" class="skill-form">
+                <div class="form-group">
+                    <label for="skillName">Skill Name:</label>
+                    <input type="text" id="skillName" name="name" required placeholder="e.g., JavaScript, React, Node.js">
+                </div>
+
+                <div class="form-group">
+                    <label for="proficiency">Proficiency (1-10):</label>
+                    <input type="number" id="proficiency" name="proficiency" min="1" max="10" required placeholder="1-10">
+                </div>
+
+                <div class="form-group">
+                    <label for="category">Category:</label>
+                    <select id="category" name="category" required>
+                        <option value="">Select Category</option>
+                        <option value="Frontend">Frontend</option>
+                        <option value="Backend">Backend</option>
+                        <option value="Database">Database</option>
+                        <option value="DevOps">DevOps</option>
+                        <option value="Soft Skills">Soft Skills</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Add Skill</button>
+            </form>
+        </section>
+
+        <!-- Skills List -->
+        <section class="skills-section">
+            <div class="section-header">
+                <h2>My Skills</h2>
+                <div class="filter-container">
+                    <label for="filterCategory">Filter by Category:</label>
+                    <select id="filterCategory" class="filter-select">
+                        <option value="all">All Categories</option>
+                        <option value="Frontend">Frontend</option>
+                        <option value="Backend">Backend</option>
+                        <option value="Database">Database</option>
+                        <option value="DevOps">DevOps</option>
+                        <option value="Soft Skills">Soft Skills</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="skillsList" class="skills-grid">
+                <!-- Skills will be dynamically added here -->
+                <div class="loading">Loading skills...</div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Edit Modal -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Edit Skill</h2>
+            <form id="editForm" class="skill-form">
+                <input type="hidden" id="editId">
+                <div class="form-group">
+                    <label for="editName">Skill Name:</label>
+                    <input type="text" id="editName" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="editProficiency">Proficiency (1-10):</label>
+                    <input type="number" id="editProficiency" min="1" max="10" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="editCategory">Category:</label>
+                    <select id="editCategory" required>
+                        <option value="Frontend">Frontend</option>
+                        <option value="Backend">Backend</option>
+                        <option value="Database">Database</option>
+                        <option value="DevOps">DevOps</option>
+                        <option value="Soft Skills">Soft Skills</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Update Skill</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
