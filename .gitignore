@@ -1,0 +1,14 @@
+# Frontend
+frontend/.DS_Store
+
+# Backend
+backend/node_modules/
+backend/.env
+
+# IDE
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
